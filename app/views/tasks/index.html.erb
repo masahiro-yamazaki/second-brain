@@ -1,0 +1,75 @@
+<h1>Listing tasks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Baby step</th>
+      <th>Description</th>
+      <th>Project</th>
+      <th>Sprint</th>
+      <th>Group</th>
+      <th>Sub group</th>
+      <th>Parent task</th>
+      <th>Child task ids</th>
+      <th>Expected spended hour</th>
+      <th>Expected spended minute</th>
+      <th>Actual spended hour</th>
+      <th>Actual spended minute</th>
+      <th>Expected start date</th>
+      <th>Actual start date</th>
+      <th>Expected end date</th>
+      <th>Actual end date</th>
+      <th>Rank</th>
+      <th>Story point</th>
+      <th>Importance</th>
+      <th>Urgency</th>
+      <th>Clarity</th>
+      <th>Difficulty</th>
+      <th>Delete flg</th>
+      <th>Created by</th>
+      <th>Updated by</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.name %></td>
+        <td><%= task.baby_step %></td>
+        <td><%= task.description %></td>
+        <td><%= task.project_id %></td>
+        <td><%= task.sprint_id %></td>
+        <td><%= task.group_id %></td>
+        <td><%= task.sub_group_id %></td>
+        <td><%= task.parent_task_id %></td>
+        <td><%= task.child_task_ids %></td>
+        <td><%= task.expected_spended_hour %></td>
+        <td><%= task.expected_spended_minute %></td>
+        <td><%= task.actual_spended_hour %></td>
+        <td><%= task.actual_spended_minute %></td>
+        <td><%= task.expected_start_date %></td>
+        <td><%= task.actual_start_date %></td>
+        <td><%= task.expected_end_date %></td>
+        <td><%= task.actual_end_date %></td>
+        <td><%= task.rank %></td>
+        <td><%= task.story_point %></td>
+        <td><%= task.importance %></td>
+        <td><%= task.urgency %></td>
+        <td><%= task.clarity %></td>
+        <td><%= task.difficulty %></td>
+        <td><%= task.delete_flg %></td>
+        <td><%= task.created_by %></td>
+        <td><%= task.updated_by %></td>
+        <td><%= link_to 'Show', task %></td>
+        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Task', new_task_path %>

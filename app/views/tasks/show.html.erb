@@ -1,0 +1,134 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @task.name %>
+</p>
+
+<p>
+  <strong>Baby step:</strong>
+  <%= @task.baby_step %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @task.project_id %>
+</p>
+
+<p>
+  <strong>Sprint:</strong>
+  <%= @task.sprint_id %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @task.group_id %>
+</p>
+
+<p>
+  <strong>Sub group:</strong>
+  <%= @task.sub_group_id %>
+</p>
+
+<p>
+  <strong>Parent task:</strong>
+  <%= @task.parent_task_id %>
+</p>
+
+<p>
+  <strong>Child task ids:</strong>
+  <%= @task.child_task_ids %>
+</p>
+
+<p>
+  <strong>Expected spended hour:</strong>
+  <%= @task.expected_spended_hour %>
+</p>
+
+<p>
+  <strong>Expected spended minute:</strong>
+  <%= @task.expected_spended_minute %>
+</p>
+
+<p>
+  <strong>Actual spended hour:</strong>
+  <%= @task.actual_spended_hour %>
+</p>
+
+<p>
+  <strong>Actual spended minute:</strong>
+  <%= @task.actual_spended_minute %>
+</p>
+
+<p>
+  <strong>Expected start date:</strong>
+  <%= @task.expected_start_date %>
+</p>
+
+<p>
+  <strong>Actual start date:</strong>
+  <%= @task.actual_start_date %>
+</p>
+
+<p>
+  <strong>Expected end date:</strong>
+  <%= @task.expected_end_date %>
+</p>
+
+<p>
+  <strong>Actual end date:</strong>
+  <%= @task.actual_end_date %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @task.rank %>
+</p>
+
+<p>
+  <strong>Story point:</strong>
+  <%= @task.story_point %>
+</p>
+
+<p>
+  <strong>Importance:</strong>
+  <%= @task.importance %>
+</p>
+
+<p>
+  <strong>Urgency:</strong>
+  <%= @task.urgency %>
+</p>
+
+<p>
+  <strong>Clarity:</strong>
+  <%= @task.clarity %>
+</p>
+
+<p>
+  <strong>Difficulty:</strong>
+  <%= @task.difficulty %>
+</p>
+
+<p>
+  <strong>Delete flg:</strong>
+  <%= @task.delete_flg %>
+</p>
+
+<p>
+  <strong>Created by:</strong>
+  <%= @task.created_by %>
+</p>
+
+<p>
+  <strong>Updated by:</strong>
+  <%= @task.updated_by %>
+</p>
+
+<%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', tasks_path %>
