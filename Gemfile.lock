@@ -59,6 +59,8 @@ GEM
       i18n (~> 0.5)
     ffi (1.9.17)
     ffi (1.9.17-x86-mingw32)
+    font-awesome-rails (4.7.0.1)
+      railties (>= 3.2, < 5.1)
     hike (1.2.3)
     i18n (0.7.0)
     jbuilder (1.0.2)
@@ -179,6 +181,7 @@ DEPENDENCIES
   coffee-rails (= 4.0.1)
   factory_girl_rails (= 4.2.1)
   faker (= 1.1.2)
+  font-awesome-rails
   jbuilder (= 1.0.2)
   jquery-rails (= 3.0.4)
   kaminari
