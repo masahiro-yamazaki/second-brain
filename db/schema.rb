@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20170118140030) do
     t.integer  "urgency"
     t.integer  "clarity"
     t.integer  "difficulty"
+    t.integer  "progress_status"
     t.boolean  "delete_flg"
     t.string   "created_by"
     t.string   "updated_by"

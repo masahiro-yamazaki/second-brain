@@ -24,6 +24,7 @@ class CreateTasks < ActiveRecord::Migration
       t.integer :urgency
       t.integer :clarity
       t.integer :difficulty
+      t.integer :progress_status
       t.boolean :delete_flg
       t.string :created_by
       t.string :updated_by
