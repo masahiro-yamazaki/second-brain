@@ -12,6 +12,10 @@ gem 'will_paginate', '3.0.4'
 gem 'bootstrap-will_paginate', '0.0.9'
 gem 'kaminari'
 
+# add
+gem "font-awesome-rails"
+gem 'slim-rails'
+
 group :development, :test do
   gem 'sqlite3', '1.3.10' #'1.3.8' is not better in Ruby2.1
   gem 'rspec-rails', '2.13.1'
