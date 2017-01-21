@@ -5,10 +5,19 @@
     h5 = "村人６人 占い師 霊媒師 騎士"
     h5 = "人狼２人 裏切り者"
     br
-    h4 = "投票する相手"
-    h4 = "占い師"
+    span = "投票する相手"
+    = select_tag "vote", options_from_collection_for_select(@living_players, :id, :name), size: "1"
+    span = "占い師"
+    - if @opened_prayers.present?
+      - @opened_prayers.each do |prayer|
+        span = "#{prayer.name}が今回占う相手"
+        = select_tag "pray[#{prayer}]", options_from_collection_for_select(@living_players.where.not(id: prayer.id), :id, :name), size: "1"
+    - else
+      = select_tag "pray_action", options_for_select([["CO", "co"],["潜伏", "close"]]), size: "1"
     h4 = "霊媒師"
+    = select_tag "vote", options_from_collection_for_select(@living_players, :id, :name), size: "1"
     h4 = "騎士"
+    = select_tag "vote", options_from_collection_for_select(@living_players, :id, :name), size: "1"
 
     table.table.table-bordered
       thead
