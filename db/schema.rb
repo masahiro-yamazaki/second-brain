@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170121034453) do
+ActiveRecord::Schema.define(version: 20170121064302) do
+
+  create_table "days", force: true do |t|
+    t.integer  "day_num"
+    t.string   "guarded_player_id"
+    t.string   "attacked_player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "memos", force: true do |t|
     t.string   "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.string   "name"
+    t.string   "real_role"
+    t.string   "opened_role"
+    t.integer  "role_opened_date"
+    t.boolean  "is_living"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "predict_results", force: true do |t|
+    t.integer  "player_id"
+    t.string   "results"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "psychic_results", force: true do |t|
+    t.integer  "player_id"
+    t.string   "results"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -63,5 +95,13 @@ ActiveRecord::Schema.define(version: 20170121034453) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "vote_results", force: true do |t|
+    t.string   "player_id"
+    t.string   "afternoon_id"
+    t.string   "target_player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
