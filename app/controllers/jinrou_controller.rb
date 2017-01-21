@@ -1,5 +1,5 @@
 class JinrouController < ApplicationController
-  def home
+  def index
     @players = Player.all
     @days = Day.all
   end
