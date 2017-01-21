@@ -1,25 +1,26 @@
-.well
-  h3 = "人狼ゲーム 現在#{ Day.pluck(:day_num).try(:max) || 0 + 1 }日目 (残りN縄)"
-  h5 = "村人６人 占い師 霊媒師 騎士"
-  h5 = "人狼２人 裏切り者"
+= form_tag({action: "index"}, {method: "get"}) do |f|
+  .well
+    h3 = "人狼ゲーム 現在#{ Day.this_day }日目 (残りN縄)"
+    h5 = "村人６人 占い師 霊媒師 騎士"
+    h5 = "人狼２人 裏切り者"
+    br
+    h4 = "投票する相手"
+    h4 = "占い師"
+    h4 = "霊媒師"
+    h4 = "騎士"
+
+    table.table.table-bordered
+      thead
+        tr
+          th style="width:10%" 名前
+          th style="width:5%" 役職
+          th style="width:85%" 行動
+      tbody
+        - @players.each do |player|
+          tr
+            td = player.name
+            td = "市民"
+            td
+
   br
-  h4 = "投票する相手"
-  h4 = "占い師"
-  h4 = "霊媒師"
-  h4 = "騎士"
-
-table.table.table-bordered
-  thead
-    tr
-      th style="width:10%" 名前
-      th style="width:5%" 役職
-      th style="width:85%" 行動
-  tbody
-    - @players.each do |player|
-      tr
-        td = player.name
-        td = "市民"
-        td
-
-br
-= link_to "Vote and Next Day", jinrou_path, class: "btn btn-danger"
+  = submit_tag "Vote", class: "btn btn-danger"
