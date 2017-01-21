@@ -1,6 +1,7 @@
 = form_tag({action: "index"}, {method: "get"}) do |f|
+  = hidden_field_tag "this_day", (@this_day || 1).to_s
   .well
-    h3 = "人狼ゲーム 現在#{ Day.this_day }日目 (残りN縄)"
+    h3 = "人狼ゲーム 現在#{ @this_day }日目 (残りN縄)"
     h5 = "村人６人 占い師 霊媒師 騎士"
     h5 = "人狼２人 裏切り者"
     br

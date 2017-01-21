@@ -1,7 +1,8 @@
 class JinrouController < ApplicationController
   def index
-    day_num = Day.this_day
-    @day = Day.new(day_num: day_num)
+    @before_day = (params[:this_day].to_s).to_i
+    @this_day = @before_day + 1
+    @day = Day.new(day_num: @this_day)
     @day.save!
     @players = Player.all
     @days = Day.all
